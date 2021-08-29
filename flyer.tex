@@ -11,11 +11,15 @@
 \titlespacing*{\section   }{0pt}{7pt}{0pt}
 \titlespacing*{\subsection}{0pt}{5pt}{0pt}
 
+\setlength{\parskip}{3pt}
+
 \usepackage{xcolor}
 
 \usepackage{xcolor,soul,lipsum}
 \usepackage[hidelinks]{hyperref}
 \newcommand{\myhy}[1]{{\color{blue}\setulcolor{blue}\ul{#1}}}
+
+\usepackage{float}
 
 \renewcommand*\foldmarkrule{.3mm}
 %\renewcommand*\foldmarklength{5mm}
@@ -44,32 +48,48 @@
     Wenn Sie weitere Fragen haben oder mehr über das Projekt wissen wollen, lesen Sie gerne im Inneren dieses Flyers weiter!
 
     \section{Was ist OpenStreetMap?}
-    Eine sehr einfache Erklärung, die in der Community sehr beliebt ist, lautet: "Kennen Sie Google Maps? Ja, das ist so etwas ähnliches."
-    Und diese Erklärung ist auch richtig und in den meisten Fällen zutreffend, allerdings halte ich sie für unnötig vereinfachend, denn sie verkennt eine wichtige Eigenschaft des Projektes.
-    Wenn Sie auf \myhy{osm.org} gehen, sehen Sie eine Karte, die viele Leute für \textit{"die"} OpenStreetMap halten.
-    Und Sie werden die Karte vielleicht ansehen und sagen "Aber Moment, eine Straße sieht doch immer gleich aus.
+    Eine sehr einfache Erklärung, die in der Community sehr beliebt ist, lautet: \textit{\textbf{"Kennen Sie Google Maps? Ja, das ist so etwas ähnliches."}}
+    Diese Erklärung ist auch richtig und in den meisten Fällen zutreffend, jedoch vereinfachend, denn sie verkennt eine wichtige Eigenschaft des Projektes.
+    Unter der URL \myhy{osm.org} sehen Sie eine Karte, die viele Leute für \textit{"die"} OpenStreetMap halten.
+    Und Sie werden die Karte vielleicht ansehen und sagen
+
+    \hspace{15pt} "Aber Moment, eine Straße sieht doch immer gleich aus.
     Wenn man einträgt, ob eine Straße einen Bürgersteig hat, sieht man das auf der Karte doch gar nicht!"
+
     Exakt. 99\% der Daten, die ich hier erhebe, werden nicht auf dieser Karte dargestellt.
     OpenStreetMap ist nämlich nicht \textit{"diese Karte"}, sondern eine Bezeichnung für die Datenbank mit Infos über unzählige Objekte in der realen Welt.
+
     Ich beschreibe es gerne als \textit{"Wikipedia für Dinge mit Koordinaten"}.
-    Jemand, der eine Karte erstellt, entscheidet dann, welche Daten wie auf seiner Karte zu sehen sind und welche nicht.
-    Gehen Sie zum Beispiel auf \myhy{cyclosm.org}, so sehen Sie eine Karte, auf der für Radfahrer besonders wichtige Informationen hervorgehoben sind, wie Radwanderwege, Unterstände und Fahrradgeschäfte.
+    Jemand, der auf basis dieser Datenbank eine Karte erstellt, entscheidet dann, welche Daten wie auf seiner Karte zu sehen sind und welche nicht.
+
+    Gehen Sie zum Beispiel auf \myhy{cyclosm.org}, so sehen Sie eine Karte, auf der für Radfahrer besonders wichtige Informationen hervorgehoben sind, wie Radwege, Parkplätze, öffentlich zugängliche Luftpumpen und Fahrradgeschäfte.
+
     Diese Karte basiert auf denselben Daten wie die andere, nur werden sie anders Dargestellt.
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}[b]{0.475\linewidth}
+            \includegraphics[width=\linewidth]{carto_bb_s.png}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.475\linewidth}
+            \includegraphics[width=\linewidth]{cyclosm_bb_s.png}
+        \end{minipage}
+        \rotatebox{90}{\scriptsize\textcopyright OpenStreetMap-Mitwirkende}
+        \scalebox{.75}[.8]{Die \myhy{osm.org}-Karte und diese Fahrradkarte basieren auf denselben Daten.}
+    \end{figure}
     Feuerwehren zum Beispiel nutzen auch Karten, die auf genau dieser Datenbank basieren, nur sind auf deren Karten Hydranten sichtbar.
     Und auch viele humanitäre Zwecke profitieren von OpenStreetMap-Daten.
     Auf \myhy{wheelmap.org} finden Sie z.B. eine Karte, die die Bedürfnisse von Rollstuhlfahrern in den Vordergrund stellt.
-    Und einem Blinden kann eine spezielle App mithilfe von OpenStreetMap-Daten sagen, wo er langlaufen muss, um nur an Ampeln mit Blindenhilfe vorbeizukommen.
+    Und einer Blinden Person kann eine spezielle App mithilfe von OpenStreetMap-Daten sagen, wo Sie langlaufen muss, um nur an Ampeln mit Blindenhilfe vorbeizukommen.
 
     Ich bearbeite also gar nicht wirklich \textit{"die Karte"}, sondern befülle eine Datenbank mit Fakten über die echte Welt, aus der dann jeder (auch Sie, wenn Sie wollen!) sich Karten, Apps und Stadtpläne nach eigenen Wünschen generieren kann.
 
     Sollten Sie das jetzt aber alles zu verwirrend oder zu kompliziert finden, keine Sorge.
     Am Ende ist auch die Aussage \textit{"Es ist wie Google Maps."} vollkommen ausreichend.
 
-    \includegraphics[width=\linewidth]{karte.png}
-
 
     \section{Wieso OpenStreetMap statt z.B. Google Maps?}
-    \subsection{Zunächst das offensichtliche Vorweg:}
+    \subsection{Zunächst das Offensichtliche Vorweg}
     OpenStreetMap ist ein gemeinfreies Projekt.
     Es gehört keinem Großkonzern wie Google, deswegen wertet auch niemand aus, was Sie sich auf \myhy{osm.org} ansehen, oder welche Routen sie planen und versucht dann Ihnen entsprechende Werbung zu zeigen.
 
@@ -84,8 +104,8 @@
 
     \begin{itemize}[noitemsep,topsep=0pt]
         \item Google Maps kennt Straßen, OSM kennt Trampelpfade, Hinterhofwege und Wege in öffentlichen Gebäuden.
-        \item Google weiß, das hier eine Straße ist.
-        OSM weiß, ob sie einen Bürgersteig hat, ob sie nachts beleuchtet ist, welchen Straßenbelag sie hat, welche Höchstgeschwindigkeit sie hat und vieles mehr.
+        \item Google weiß, dass hier eine Straße ist.
+        OSM weiß, ob sie einen Bürgersteig hat, ob sie nachts beleuchtet ist, welchen Straßenbelag sie hat, welche Höchstgeschwindigkeit sie hat, ob es Fahrradwege gibt, deren Belag und vieles mehr.
         \item Google Maps kennt in einem Park Gehwege, OSM kennt Aussichtspunkte, Sitzbänke, Mülleimer, Hundekottütenspender und teilweise jeden einzelnen Baum.
         \item Google Maps bietet die beste Navigation -- für Autofahrer.
         Sobald Sie mit dem Fahrrad oder zu Fuß unterwegs sind, sind sie ohne eine App, die OSM-Daten nutzt, komplett verlassen.
@@ -94,7 +114,7 @@
     \end{itemize}
 
     \subsection{Als letztes: Freiheit}
-    Mein Hauptgrund als Informatiker und Programmierer OSM zu nutzen ist, dass Google viele Daten gar nicht oder nur gegen viel Geld herausgibt.
+    Ein Hauptgrund OSM zu nutzen ist, dass Google viele Daten gar nicht oder nur gegen viel Geld herausgibt.
     OpenStreetMap-Daten sind nicht nur kostenlos, sondern dürfen für jeden Zweck verwendet werden! Solange Sie kenntlich machen, dass es sich um OSM-Daten handelt, dürfen Sie die Daten zu jedem Zweck verwenden, sogar kommerziell.
 
     Sie wollen das Buch "Der deutsche Döneratlas" herausbringen und damit millionen scheffeln?
@@ -104,9 +124,11 @@
 
     \section{Häufig gestellte Fragen}
     \subsection{Welche Daten erheben Sie?}
-    Mit der Android-App \textit{Streetcomplete}, mit der ich meistens arbeite, erhebe ich ca. 100 verschiedene Datentypen.
-    Sie finden auf der rechten Seite eine Auflistung.
+    Mit der Android-App \textit{Streetcomplete}, kann man ca. 100 verschiedene Datentypen erheben.
+
     Allerdings mache ich manchmal auch Fotos von Dingen, die ich mit meiner App nicht verzeichnen kann, und trage sie später per Hand ein.
+
+    Man kann auch Wege mit dem Rad oder Auto abfahren und alle Sekunde ein Bild machen, und diese dann bei \myhy{KartaView.org} oder \myhy{mapillary.org} hochladen.
 
     \subsection{In wessen Auftrag erheben Sie die Daten?}
     Niemand hat mir "den Auftrag" gegeben, das zu tun.
@@ -130,15 +152,14 @@
     Doch.
     Die Infos, die ich erhebe, sind sog. "nicht schützenswerte Daten".
     Ein Datenpunkt, der unter diese Schutzwürdigkeit fällt, wäre z.B. Wer in einem Haus wohnt.
-    So etwas dürfte ich nicht (und möchte ich auch nicht) erheben.
+    So etwas dürfte ich nicht (und möchte man in OSM auch nicht) erheben.
 
     \subsection{Sie haben Fotos von meinem Grundstück gemacht, das dürfen Sie nicht!}
-    Obwohl dieser Flyer lange vor meinem Aushändigen an Sie geschrieben wurde, kann ich Ihnen versichern, dass ich kein(e) Foto(s) von Ihnen oder Ihrem Grundstück gemacht habe.
-    Danach habe ich weder ein Bedürfnis noch habe ich Speicherplatz dafür.
-    Wie gesagt mache ich manchmal Fotos von Objekten wie Briefkästen (also Postbriefkästen! Nicht die an Häusern) oder Spielplätzen, um sie später per Hand einzutragen.
-    Es handelt sich also höchstwahrscheinlich um ein Missverständnis.
-    Aber nur nebenbei: Ich dürfte es, wenn ich wollte.
+    Doch.
+    Manchmal mache ich Fotos von Objekten wie Briefkästen (also Postbriefkästen! Nicht die an Häusern) oder Spielplätzen, um sie später per Hand einzutragen.
+    Oder von Gebäudeteilen um die Umrisse konkreter darzustellen, das ist auf Luftbildern nicht immer gut zu erkennen.
     Es gibt zwar ein Recht am eigenen Bild, aber kein Recht am Bild des eigenen Eigentums.
+    Alles was man von öffentlichem Straßenraum sehen kann, darf man auch so fotografieren und veröffentlichen, ausgenommen personenbezogene Daten wie z.B. Kennzeichen oder Gesichter.
 
     \subsection{Wenn Sie Daten erheben, muss es einen Ansprechpartner geben, wer ist das?}
     Bei OpenStreetMap gibt es keinen offiziellen Ansprechpartner.
@@ -146,8 +167,9 @@
     Aber der ist trotzdem kein guter Ansprechpartner, um sich über meine Erhebung hier zu beschweren, da ich kein Mitglied dieses Vereins bin.
 
 
-    \subsection{Daten, die ich erhebe:}
+    \subsection{Daten, die Streetcomplete erheben kann:}
     \begin{itemize}[noitemsep,topsep=0pt]
+        \small
         \item Ob Straßen, Wege, Bushaltestellen und Sportplätze nachts beleuchtet sind
         \item Straßennamen, Hausnummern, zu welchen Straßen Häuser gehören
         \item Gebäudetypen, Anzahl der Geschosse und Dachgeschosse, Dachformen
@@ -172,9 +194,16 @@
         \item Wer ist Betreiber von Altkleidercontainern, Geldautomaten und E-Auto-Ladestationen?
     \end{itemize}
 
+    \subsection{Empfehlungen}
+    \begin{itemize}[noitemsep,topsep=0pt]
+        \item \textit{OsmAnd} App zum Offline navigieren, z.B. Fürs Rad, oder Auto.
+        \item \myhy{Cyclosm.org} Karte mit Detaillierter Fahrradinfrastruktur.
+        \item \textit{Streetcomplete} Android-App zum vervollständigen von OSM (für Laien gedacht).
+        \item \myhy{KartaView.org} Alternative zu \textit{Google Streetview} und \textit{Mapillary}
+    \end{itemize}
 
-    \vfill
-    \textcolor{gray}{\small Dieser Flyer wurde vom OSM-User wielandb erstellt und steht unter CC-BY 2.0.
+    %\vfill
+    \textcolor{darkgray}{\scriptsize Dieser Flyer wurde vom OSM-User wielandb erstellt und steht unter CC-BY 2.0.
     Er darf frei kopiert, weitergegeben und verändert werden, solange dieser Hinweis bestehen bleibt.
     Version 1.6}
 
